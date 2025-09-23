@@ -1,6 +1,7 @@
 name = "brown-courses-agent"
 main = "src/agent.ts"
 compatibility_date = "2025-09-01"
+compatibility_flags = ["nodejs_compat"]
 
 [ai]
 binding = "AI"   # Workers AI binding (env.AI)  ← required
@@ -10,13 +11,17 @@ binding = "AI"   # Workers AI binding (env.AI)  ← required
 binding = "COURSE_INDEX"
 index_name = "brown-courses"  # created in step 4
 
+[[vectorize]]
+binding = "REQUIREMENTS_INDEX"
+index_name = "brown-requirements"
+
 [[durable_objects.bindings]]
 name = "SESSION_DO"
 class_name = "SessionDO"
 
 [[migrations]]
 tag = "v1"
-new_classes = ["SessionDO"]
+new_sqlite_classes = ["SessionDO"]
 
 [vars]
 MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
