@@ -1,3 +1,6 @@
+# Deployed Website
+https://cf.klivanskyr.workers.dev/
+
 # Brown University Course Search AI Agent
 
 An intelligent course search and degree planning assistant powered by Cloudflare Workers AI, designed to help Brown University students discover courses and plan their academic journey.
@@ -117,47 +120,11 @@ User Query → React Frontend → AI Agent → Semantic Search → Formatted Res
    wrangler tail  # Monitor logs
    ```
 
-### Available Scripts
-
-- `npm run start` - Start development server with hot reload
-- `npm run deploy` - Build and deploy to Cloudflare Workers  
-- `npm run test` - Run unit tests with Vitest
-- `npm run types` - Generate TypeScript definitions
-- `npm run format` - Format code with Prettier
-- `npm run check` - Run linting and type checking
-
-## 📁 Project Structure
-
-```
-cf_ai_brown_course_search/
-├── cf/                          # Main Cloudflare Workers application
-│   ├── src/
-│   │   ├── agent.ts            # AI agent implementation
-│   │   ├── app.tsx             # React frontend application
-│   │   ├── tools.ts            # AI tools for course search
-│   │   └── indexer.ts          # Vector database indexing
-│   ├── data/                    # Processed course data
-│   └── wrangler.toml           # Cloudflare Workers configuration
-├── scrapers/                    # Python data collection scripts
-│   ├── cab_scraper.py          # Course catalog scraper
-│   ├── bulletin_scraper.py     # Requirements scraper  
-│   └── cab_cleaner.py          # Data normalization
-└── README.md
-```
-
-## 🔧 Configuration
-
-Key configuration files:
-- `wrangler.toml` - Cloudflare Workers settings, AI models, and bindings
-- `package.json` - Dependencies and build scripts
-- `vite.config.ts` - Frontend build configuration
-- `tsconfig.json` - TypeScript compiler options
 
 ## 🎨 Features
 
 - **Semantic Search**: Natural language course discovery using vector embeddings
 - **Real-time Chat**: Streaming AI responses with tool invocations
-- **Dark/Light Theme**: Responsive design with theme switching
 - **Degree Planning**: Intelligent recommendations based on major requirements
 - **Course Details**: Comprehensive information including schedules, prerequisites, and availability
 
