@@ -1,0 +1,14 @@
+name = "brown-courses-indexer"
+main = "src/indexer.ts"
+compatibility_date = "2025-09-01"
+
+[ai]
+binding = "AI"
+
+[[vectorize]]
+binding = "COURSE_INDEX"
+index_name = "brown-courses"
+
+[vars]
+MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
+EMBED_MODEL = "@cf/baai/bge-base-en-v1.5"

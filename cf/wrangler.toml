@@ -1,0 +1,28 @@
+name = "brown-courses-agent"
+main = "src/agent.ts"
+compatibility_date = "2025-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+[ai]
+binding = "AI"   # Workers AI binding (env.AI)  ← required
+# Docs show how to add this binding either here or via dashboard. :contentReference[oaicite:4]{index=4}
+
+[[vectorize]]
+binding = "COURSE_INDEX"
+index_name = "brown-courses"  # created in step 4
+
+[[vectorize]]
+binding = "REQUIREMENTS_INDEX"
+index_name = "brown-requirements"
+
+[[durable_objects.bindings]]
+name = "SESSION_DO"
+class_name = "SessionDO"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["SessionDO"]
+
+[vars]
+MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
+EMBED_MODEL = "@cf/baai/bge-base-en-v1.5"
