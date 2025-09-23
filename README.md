@@ -128,3 +128,7 @@ User Query → React Frontend → AI Agent → Semantic Search → Formatted Res
 - **Degree Planning**: Intelligent recommendations based on major requirements
 - **Course Details**: Comprehensive information including schedules, prerequisites, and availability
 
+
+## Known Issues
+- There is only one instance of the bot that is stored in a durable object. This means that everyone shares the same chatbot and if you dont clear the chat, Any personal infromation shared could be shown to others.
+
